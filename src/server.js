@@ -12,7 +12,10 @@ var cache = new Cache();
 global.cache = cache;
 global.socketio = io;
 
-app.use(morgan('combined'));
+if (process.env.NODE_ENV !== 'test') {
+    app.use(morgan('combined'));
+}
+
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -20,6 +23,9 @@ require('./controller/Controllers')(app);
 
 io.on('connection', SocketController);
 
-http.listen(3000, () => {
+const server = http.listen(3000, () => {
     console.log('Server start at port 3000');
 });
+
+module.exports = app;
+module.exports.server = server;
