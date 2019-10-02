@@ -4,7 +4,8 @@
   "description": "A Simple Message API Server",
   "main": "src/server.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "start" : "node ./src/server.js"
   },
   "repository": {
     "type": "git",
