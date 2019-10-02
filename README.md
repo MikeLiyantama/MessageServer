@@ -23,7 +23,8 @@ $ npm run
 ```
 ### Endpoints
 1. GET /messages - Get all sent messages
-...Example Response:
+
+    Example Response:
 ```
 {
     "success": true,
@@ -35,14 +36,14 @@ $ npm run
 }
 ```
 2. POST /message - Send a new messages
-...Payload type: JSON
-...Example payload:
+    
+    Example payload:
 ```
 {
     "message": "Hello World!"
 }
 ```
-...Example Response:
+    Example Response:
 ```
 {
     "success" : true
