@@ -23,6 +23,17 @@ $ npm run
 ```
 ### Endpoints
 1. GET /messages - Get all sent messages
+...Example Response:
+```
+{
+    "success": true,
+    "messages" : [
+        "hi",
+        "hello",
+        ....
+    ]
+}
+```
 2. POST /message - Send a new messages
 ...Payload type: JSON
 ...Example payload:
@@ -30,5 +41,12 @@ $ npm run
 {
     "message": "Hello World!"
 }
+```
+...Example Response:
+```
+{
+    "success" : true
+}
+
 ```
 3. Socket.io connection (Requires Socket.io client) -- Retrieve all messages in real-time
