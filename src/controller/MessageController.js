@@ -15,9 +15,17 @@ module.exports.getMessages = (req, res) => {
  * Controller for POST /messages
  */
 module.exports.postMessage = (req, res) => {
-    MessageService.postMessage(req.body.message);
+    if (!req.body.message) {
+        res.status(400);
+        res.json({
+            success: false,
+            message: 'Message is required',
+        });
+    } else {
+        MessageService.postMessage(req.body.message);
 
-    res.json({
-        success: true,
-    });
+        res.json({
+            success: true,
+        });
+    }
 };
