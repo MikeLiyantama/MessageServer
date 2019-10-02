@@ -8,6 +8,6 @@ module.exports.getMessage = () => {
 
 module.exports.postMessage = message => {
     //Store message in cache and emit the message in socket.io instance
-    global.cache.addElem(message);
-    global.socketio.emit('message', message);
+    global.cache.addElem(String(message));
+    global.socketio.emit('message', String(message));
 };
