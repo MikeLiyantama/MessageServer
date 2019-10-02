@@ -1,3 +1,7 @@
+/**
+ * Message service module
+ */
+
 module.exports.getMessage = () => {
     return global.cache.getElems();
 };

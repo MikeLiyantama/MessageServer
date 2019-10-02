@@ -1,3 +1,7 @@
+/**
+ * Routers
+ */
+
 const MessageController = require('./MessageController');
 
 module.exports = app => {

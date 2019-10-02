@@ -12,6 +12,8 @@ var cache = new Cache();
 global.cache = cache;
 global.socketio = io;
 
+//Disable logging on test environment
+// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV !== 'test') {
     app.use(morgan('combined'));
 }
@@ -19,8 +21,10 @@ if (process.env.NODE_ENV !== 'test') {
 app.use(bodyParser.json());
 app.use(cors());
 
+//Init routers (Controller)
 require('./controller/Controllers')(app);
 
+//Init Socket.io
 io.on('connection', SocketController);
 
 const server = http.listen(3000, () => {

@@ -1,11 +1,14 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line no-undef
+/**
+ * Sample Unit testing for API
+ */
+
 process.env.NODE_ENV = 'test';
 
 let socket = require('socket.io-client')('http://localhost:3000');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-//let should = chai.should();
 let expect = chai.expect;
 let server = require('../src/server');
 
@@ -16,6 +19,8 @@ var cache = new Cache();
 chai.use(chaiHttp);
 
 // eslint-disable-next-line no-unused-vars
+
+//Init socket.io client for message tracking
 socket.on('message', message => {
     cache.addElem(message);
 });
