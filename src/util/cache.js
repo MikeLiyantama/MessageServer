@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
-
+/**
+ * A simple cache module
+ */
 module.exports = class Cache {
     constructor(){
         this.cache = [];
